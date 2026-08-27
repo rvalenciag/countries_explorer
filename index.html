@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Countries Explorer</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <header>
+            <h1>Países del Mundo</h1>
+            <div class="search-box">
+                <input
+                    type="search"
+                    placeholder="Buscar país..."
+                    id="countries-search"
+                />
+            </div>
+        </header>
+
+        <main>
+            <!-- SECCIÓN DE FILTROS -->
+            <nav id="filters">
+                <h2>Filtros</h2>
+                <div class="filter-group">
+                    <label for="region-select">Región:</label>
+                    <select id="region-select">
+                        <option value="" selected>Todos</option>
+                        <option value="africa">África</option>
+                        <option value="americas">América</option>
+                        <option value="asia">Asia</option>
+                        <option value="europe">Europa</option>
+                        <option value="oceania">Oceanía</option>
+                    </select>
+                </div>
+            </nav>
+
+            <!-- SECCIÓN PRINCIPAL -->
+            <div class="content-layout">
+                <!-- Tarjetas -->
+                <section class="countries-section">
+                    <h2>Lista de Países</h2>
+
+                    <div class="countries-grid">
+                        <!-- Tarjeta 1 -->
+                        <article class="country-card">
+                            <img
+                                src="https://flagcdn.com/w320/bo.png"
+                                alt="Bandera de Bolivia"
+                                class="card-flag"
+                            />
+                            <div class="card-body">
+                                <h3>Bolivia</h3>
+                                <p><strong>Población:</strong> 11,673,021</p>
+                                <p><strong>Región:</strong> América</p>
+                                <p><strong>Capital:</strong> Sucre</p>
+                            </div>
+                        </article>
+
+                        <!-- Tarjeta 2 -->
+                        <article class="country-card">
+                            <img
+                                src="https://flagcdn.com/w320/de.png"
+                                alt="Bandera de Alemania"
+                                class="card-flag"
+                            />
+                            <div class="card-body">
+                                <h3>Alemania</h3>
+                                <p><strong>Población:</strong> 83,240,525</p>
+                                <p><strong>Región:</strong> Europa</p>
+                                <p><strong>Capital:</strong> Berlín</p>
+                            </div>
+                        </article>
+
+                        <!-- Tarjeta 3 -->
+                        <article class="country-card">
+                            <img
+                                src="https://flagcdn.com/w320/ru.png"
+                                alt="Bandera de Bolivia"
+                                class="card-flag"
+                            />
+                            <div class="card-body">
+                                <h3>Bolivia</h3>
+                                <p><strong>Población:</strong> 11,673,021</p>
+                                <p><strong>Región:</strong> América</p>
+                                <p><strong>Capital:</strong> Sucre</p>
+                            </div>
+                        </article>
+
+                        <!-- Tarjeta 4 -->
+                        <article class="country-card">
+                            <img
+                                src="https://flagcdn.com/w320/co.png"
+                                alt="Bandera de Alemania"
+                                class="card-flag"
+                            />
+                            <div class="card-body">
+                                <h3>Alemania</h3>
+                                <p><strong>Población:</strong> 83,240,525</p>
+                                <p><strong>Región:</strong> Europa</p>
+                                <p><strong>Capital:</strong> Berlín</p>
+                            </div>
+                        </article>
+
+                        <!-- Tarjeta 1 -->
+                        <article class="country-card">
+                            <img
+                                src="https://flagcdn.com/w320/bo.pn/w320g"
+                                alt="Bandera de Bolivia"
+                                class="card-flag"
+                            />
+                            <div class="card-body">
+                                <h3>Bolivia</h3>
+                                <p><strong>Población:</strong> 11,673,021</p>
+                                <p><strong>Región:</strong> América</p>
+                                <p><strong>Capital:</strong> Sucre</p>
+                            </div>
+                        </article>
+
+                        <!-- Tarjeta 2 -->
+                        <article class="country-card">
+                            <img
+                                src="https://flagcdn.com/w320/de.png"
+                                alt="Bandera de Alemania"
+                                class="card-flag"
+                            />
+                            <div class="card-body">
+                                <h3>Alemania</h3>
+                                <p><strong>Población:</strong> 83,240,525</p>
+                                <p><strong>Región:</strong> Europa</p>
+                                <p><strong>Capital:</strong> Berlín</p>
+                            </div>
+                        </article>
+
+                        <!-- Tarjeta 3 -->
+                        <article class="country-card">
+                            <img
+                                src="https://flagcdn.com/w320/ru.png"
+                                alt="Bandera de Bolivia"
+                                class="card-flag"
+                            />
+                            <div class="card-body">
+                                <h3>Bolivia</h3>
+                                <p><strong>Población:</strong> 11,673,021</p>
+                                <p><strong>Región:</strong> América</p>
+                                <p><strong>Capital:</strong> Sucre</p>
+                            </div>
+                        </article>
+
+                        <!-- Tarjeta 4 -->
+                        <article class="country-card">
+                            <img
+                                src="https://flagcdn.com/w320/co.png"
+                                alt="Bandera de Alemania"
+                                class="card-flag"
+                            />
+                            <div class="card-body">
+                                <h3>Alemania</h3>
+                                <p><strong>Población:</strong> 83,240,525</p>
+                                <p><strong>Región:</strong> Europa</p>
+                                <p><strong>Capital:</strong> Berlín</p>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+                <!-- Sidebar para el detalle del pais selec -->
+                <aside class="country-detail-sidebar">
+                    <button class="close-btn">&times;</button>
+                    <div class="sidebar-content">
+                        <h2>Detalle del País</h2>
+                        <img
+                            src="https://flagcdn.com/w320/bo.png"
+                            alt="Bandera"
+                            class="detail-flag"
+                        />
+                        <h3>Estado Plurinacional de Bolivia</h3>
+                        <p>
+                            <strong>Nombre oficial:</strong> Estado
+                            Plurinacional de Bolivia
+                        </p>
+                        <p><strong>Moneda:</strong> Boliviano (BOB)</p>
+                        <p>
+                            <strong>Idiomas:</strong> Español, Quechua, Aymara
+                        </p>
+                        <p>
+                            <strong>Fronteras:</strong> ARG, BRA, CHL, PRY, PER
+                        </p>
+                    </div>
+                </aside>
+            </div>
+        </main>
+
+        <footer>
+            <p>Derechos reservados FICCT 2-2026</p>
+        </footer>
+    </body>
+</html>
