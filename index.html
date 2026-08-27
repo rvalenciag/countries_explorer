@@ -8,19 +8,21 @@
     </head>
     <body>
         <header>
-            <h1>Países del Mundo</h1>
-            <div class="search-box">
-                <input
-                    type="search"
-                    placeholder="Buscar país..."
-                    id="countries-search"
-                />
+            <div class="header-container">
+                <h1>Países del Mundo</h1>
+                <div class="search-box">
+                    <input
+                        type="search"
+                        placeholder="Buscar país por nombre..."
+                        id="countries-search"
+                    />
+                </div>
             </div>
         </header>
 
         <main>
             <!-- SECCIÓN DE FILTROS -->
-            <nav id="filters">
+            <nav id="filters" class="filters-bar">
                 <h2>Filtros</h2>
                 <div class="filter-group">
                     <label for="region-select">Región:</label>
@@ -31,6 +33,15 @@
                         <option value="asia">Asia</option>
                         <option value="europe">Europa</option>
                         <option value="oceania">Oceanía</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="sort-select">Ordenar por:</label>
+                    <select id="sort-select">
+                        <option value="name-asc">Nombre (A-Z)</option>
+                        <option value="name-desc">Nombre (Z-A)</option>
+                        <option value="pop-desc">Mayor Población</option>
+                        <option value="pop-asc">Menor Población</option>
                     </select>
                 </div>
             </nav>
@@ -105,7 +116,7 @@
                         <!-- Tarjeta 1 -->
                         <article class="country-card">
                             <img
-                                src="https://flagcdn.com/w320/bo.pn/w320g"
+                                src="https://flagcdn.com/w320/bo.png"
                                 alt="Bandera de Bolivia"
                                 class="card-flag"
                             />
@@ -179,6 +190,9 @@
                             <strong>Nombre oficial:</strong> Estado
                             Plurinacional de Bolivia
                         </p>
+                        <p><strong>Población:</strong> 83,240,525</p>
+                        <p><strong>Región:</strong> Europa</p>
+                        <p><strong>Capital:</strong> Berlín</p>
                         <p><strong>Moneda:</strong> Boliviano (BOB)</p>
                         <p>
                             <strong>Idiomas:</strong> Español, Quechua, Aymara
