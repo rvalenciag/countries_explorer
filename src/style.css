@@ -1,7 +1,7 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* Incluye padding y bordes en el ancho total */
+    box-sizing: border-box;
 }
 
 :root {
@@ -14,7 +14,7 @@
     --border-color: #334155;
     
     /* Fuente global */
-    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --font-family: 'Nunito Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
@@ -39,11 +39,6 @@ header {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 20px;
-    flex-wrap: wrap;
 }
 
 .header-container h1 {
@@ -55,25 +50,40 @@ header {
     flex: 1;
     max-width: 350px;
     min-width: 250px;
-}
-
-.search-box input {
-    width: 100%;
-    padding: 10px 16px;
-    border-radius: 20px;
-    border: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0 12px;
     background-color: var(--bg-color);
-    color: var(--text-color);
-    font-size: 0.95rem;
-    outline: none;
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
     transition: border-color 0.2s ease;
 }
 
-.search-box input:focus {
-    border-color: var(--accent-color);
+.search-box input {
+    flex: 1;
+    min-width: 0;
+    border: none;
+    background: transparent;
+    color: var(--text-color);
+    font-size: 0.95rem;
+    padding: 10px 0;
+    outline: none;
 }
 
-/* */
+.search-btn {
+    border: none;
+    background: transparent;
+    color: var(--text-muted);
+    padding: 6px;
+    cursor: pointer;
+}
+
+.search-btn:hover {
+    color: var(--accent-color);
+}
+
+/* MAIN */
 main {
     width: 100%;
     max-width: 1200px;
@@ -82,11 +92,16 @@ main {
     flex: 1;
 }
 
+main > h2 {
+    font-size: 1.5rem;
+    margin-bottom: 16px;
+}
+
 .filters-bar {
     display: flex;
     gap: 20px;
     align-items: center;
-    flex-wrap: wrap;
+    justify-content: space-evenly;
     background-color: var(--card-bg);
     padding: 16px 20px;
     border-radius: 12px;
@@ -124,7 +139,6 @@ main {
 .content-layout {
     display: flex;
     gap: 24px;
-    position: relative;
     align-items: flex-start;
 }
 
@@ -153,14 +167,23 @@ main {
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+.country-card.selected {
+    border: 1px solid var(--accent-color);
+    box-shadow: 0 10px 20px rgba(200, 200, 200, 0.3);
+}
+
 .country-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
+.country-card:active {
+    transform: scale(0.98);
+}
+
 .card-flag {
     width: 100%;
-    height: 130px;
+    height: 10rem;
     object-fit: cover;
 }
 
@@ -188,7 +211,13 @@ main {
     padding: 24px;
     position: sticky;
     top: 20px;
-    position: relative; /* Para posicionar el botón de cerrar */
+}
+.country-detail-sidebar.hide {
+    display: none;
+}
+
+.country-detail-sidebar.show {
+    display: block;
 }
 
 .close-btn {
@@ -241,15 +270,15 @@ footer {
     font-size: 0.85rem;
 }
 
-/* Responsiv */
+/* Responsive: pantallas angostas (ancho <= 768px) */
 @media (max-width: 768px) {
-    .header-container {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
     .search-box {
         max-width: 100%;
+        min-width: 0;
+    }
+
+    .search-box input {
+        font-size: 16px;
     }
 
     .filters-bar {
@@ -258,11 +287,38 @@ footer {
     }
 
     .filter-group {
-        justify-content: space-between;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 6px;
+    }
+
+    .filter-group select {
+        width: 100%;
     }
 
     .content-layout {
         flex-direction: column;
+        align-items: stretch;
+    }
+
+    .countries-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .country-card {
+        display: flex;
+    }
+
+    .card-flag {
+        width: 40%;
+        height: 100%;
+    }
+
+    .card-body {
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
 
     .country-detail-sidebar {

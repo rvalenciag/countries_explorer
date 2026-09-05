@@ -1,22 +1,17 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Countries Explorer</title>
-        <link rel="stylesheet" href="style.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link rel="stylesheet" href="src/style.css" />
     </head>
     <body>
         <header>
             <div class="header-container">
                 <h1>Países del Mundo</h1>
-                <div class="search-box">
-                    <input
-                        type="search"
-                        placeholder="Buscar país por nombre..."
-                        id="countries-search"
-                    />
-                </div>
             </div>
         </header>
 
@@ -37,169 +32,47 @@
                 </div>
                 <div class="filter-group">
                     <label for="sort-select">Ordenar por:</label>
-                    <select id="sort-select">
+                    <select id="sort-select" disabled>
                         <option value="name-asc">Nombre (A-Z)</option>
                         <option value="name-desc">Nombre (Z-A)</option>
                         <option value="pop-desc">Mayor Población</option>
                         <option value="pop-asc">Menor Población</option>
                     </select>
                 </div>
+                <div class="search-box">
+                    <input
+                        type="search"
+                        placeholder="Buscar país por nombre..."
+                        id="countries-search"
+                    />
+                    <button type="button" id="search-country" class="search-btn">Buscar</button>
+                </div>
             </nav>
 
             <!-- SECCIÓN PRINCIPAL -->
+            <h2>Lista de Países</h2>
             <div class="content-layout">
                 <!-- Tarjetas -->
                 <section class="countries-section">
-                    <h2>Lista de Países</h2>
-
-                    <div class="countries-grid">
-                        <!-- Tarjeta 1 -->
-                        <article class="country-card">
-                            <img
-                                src="https://flagcdn.com/w320/bo.png"
-                                alt="Bandera de Bolivia"
-                                class="card-flag"
-                            />
-                            <div class="card-body">
-                                <h3>Bolivia</h3>
-                                <p><strong>Población:</strong> 11,673,021</p>
-                                <p><strong>Región:</strong> América</p>
-                                <p><strong>Capital:</strong> Sucre</p>
-                            </div>
-                        </article>
-
-                        <!-- Tarjeta 2 -->
-                        <article class="country-card">
-                            <img
-                                src="https://flagcdn.com/w320/de.png"
-                                alt="Bandera de Alemania"
-                                class="card-flag"
-                            />
-                            <div class="card-body">
-                                <h3>Alemania</h3>
-                                <p><strong>Población:</strong> 83,240,525</p>
-                                <p><strong>Región:</strong> Europa</p>
-                                <p><strong>Capital:</strong> Berlín</p>
-                            </div>
-                        </article>
-
-                        <!-- Tarjeta 3 -->
-                        <article class="country-card">
-                            <img
-                                src="https://flagcdn.com/w320/ru.png"
-                                alt="Bandera de Bolivia"
-                                class="card-flag"
-                            />
-                            <div class="card-body">
-                                <h3>Bolivia</h3>
-                                <p><strong>Población:</strong> 11,673,021</p>
-                                <p><strong>Región:</strong> América</p>
-                                <p><strong>Capital:</strong> Sucre</p>
-                            </div>
-                        </article>
-
-                        <!-- Tarjeta 4 -->
-                        <article class="country-card">
-                            <img
-                                src="https://flagcdn.com/w320/co.png"
-                                alt="Bandera de Alemania"
-                                class="card-flag"
-                            />
-                            <div class="card-body">
-                                <h3>Alemania</h3>
-                                <p><strong>Población:</strong> 83,240,525</p>
-                                <p><strong>Región:</strong> Europa</p>
-                                <p><strong>Capital:</strong> Berlín</p>
-                            </div>
-                        </article>
-
-                        <!-- Tarjeta 1 -->
-                        <article class="country-card">
-                            <img
-                                src="https://flagcdn.com/w320/bo.png"
-                                alt="Bandera de Bolivia"
-                                class="card-flag"
-                            />
-                            <div class="card-body">
-                                <h3>Bolivia</h3>
-                                <p><strong>Población:</strong> 11,673,021</p>
-                                <p><strong>Región:</strong> América</p>
-                                <p><strong>Capital:</strong> Sucre</p>
-                            </div>
-                        </article>
-
-                        <!-- Tarjeta 2 -->
-                        <article class="country-card">
-                            <img
-                                src="https://flagcdn.com/w320/de.png"
-                                alt="Bandera de Alemania"
-                                class="card-flag"
-                            />
-                            <div class="card-body">
-                                <h3>Alemania</h3>
-                                <p><strong>Población:</strong> 83,240,525</p>
-                                <p><strong>Región:</strong> Europa</p>
-                                <p><strong>Capital:</strong> Berlín</p>
-                            </div>
-                        </article>
-
-                        <!-- Tarjeta 3 -->
-                        <article class="country-card">
-                            <img
-                                src="https://flagcdn.com/w320/ru.png"
-                                alt="Bandera de Bolivia"
-                                class="card-flag"
-                            />
-                            <div class="card-body">
-                                <h3>Bolivia</h3>
-                                <p><strong>Población:</strong> 11,673,021</p>
-                                <p><strong>Región:</strong> América</p>
-                                <p><strong>Capital:</strong> Sucre</p>
-                            </div>
-                        </article>
-
-                        <!-- Tarjeta 4 -->
-                        <article class="country-card">
-                            <img
-                                src="https://flagcdn.com/w320/co.png"
-                                alt="Bandera de Alemania"
-                                class="card-flag"
-                            />
-                            <div class="card-body">
-                                <h3>Alemania</h3>
-                                <p><strong>Población:</strong> 83,240,525</p>
-                                <p><strong>Región:</strong> Europa</p>
-                                <p><strong>Capital:</strong> Berlín</p>
-                            </div>
-                        </article>
+                    <div class="countries-grid" id="countries">
+                        
                     </div>
                 </section>
 
                 <!-- Sidebar para el detalle del pais selec -->
-                <aside class="country-detail-sidebar">
-                    <button class="close-btn">&times;</button>
+                <aside class="country-detail-sidebar hide">
+                    <button class="close-btn" id="close-detail">&times;</button>
                     <div class="sidebar-content">
                         <h2>Detalle del País</h2>
-                        <img
-                            src="https://flagcdn.com/w320/bo.png"
-                            alt="Bandera"
-                            class="detail-flag"
-                        />
-                        <h3>Estado Plurinacional de Bolivia</h3>
-                        <p>
-                            <strong>Nombre oficial:</strong> Estado
-                            Plurinacional de Bolivia
-                        </p>
-                        <p><strong>Población:</strong> 83,240,525</p>
-                        <p><strong>Región:</strong> Europa</p>
-                        <p><strong>Capital:</strong> Berlín</p>
-                        <p><strong>Moneda:</strong> Boliviano (BOB)</p>
-                        <p>
-                            <strong>Idiomas:</strong> Español, Quechua, Aymara
-                        </p>
-                        <p>
-                            <strong>Fronteras:</strong> ARG, BRA, CHL, PRY, PER
-                        </p>
+                        <img id="detail-flag" alt="Bandera" class="detail-flag" />
+                        <h3 id="detail-name"></h3>
+                        <p><strong>Nombre oficial:</strong> <span id="detail-official"></span></p>
+                        <p><strong>Población:</strong> <span id="detail-population"></span></p>
+                        <p><strong>Región:</strong> <span id="detail-region"></span></p>
+                        <p><strong>Capital:</strong> <span id="detail-capital"></span></p>
+                        <p><strong>Moneda:</strong> <span id="detail-currency"></span></p>
+                        <p><strong>Idiomas:</strong> <span id="detail-languages"></span></p>
+                        <p><strong>Fronteras:</strong> <span id="detail-borders"></span></p>
                     </div>
                 </aside>
             </div>
@@ -208,5 +81,8 @@
         <footer>
             <p>Derechos reservados FICCT 2-2026</p>
         </footer>
+
+        <script src="src/data.js"></script>
+        <script src="src/app.js"></script>
     </body>
 </html>
