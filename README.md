@@ -7,6 +7,93 @@ API [REST Countries](https://restcountries.com).
 
 ---
 
+## 1. Arquitectura del Sistema
+
+### 1.1 Diagrama Cliente-Servidor
+```mermaid
+graph LR
+    subgraph Cliente [FrontEnd - Navegador]
+        UI[Interfaz de Usuario / DOM]
+        Fetch[Cliente HTTP / fetch API]
+    end
+
+    subgraph Servidor [BackEnd - API REST]
+        API[Servidor HTTP / Express.js]
+        Controllers[Controladores & Rutas]
+    end
+
+    subgraph Persistencia [Base de Datos]
+        DB[(Base de Datos / REST Countries API)]
+    end
+
+    UI -->|Evento de usuario| Fetch
+    Fetch -->|Petición HTTP / GET| API
+    API -->|Lógica de negocio| Controllers
+    Controllers -->|Consulta de datos| DB
+    DB -->|Retorna registros| Controllers
+    Controllers -->|Respuesta JSON| Fetch
+    Fetch -->|Renderiza elementos| UI
+```
+
+### 1.2 Flujo de Datos de una petición
+
+**Ejemplo de Recorrido:** El usuario busca un país por su nombre (ejemplo: "Bolivia")
+
+1. El usuario escribe "Bolivia" en el campo de búsqueda de la interfazz y presiona el botón "Buscar"
+2. `fetch` (Cliente HTTP): El código JavaScript en el navegador captura el evento y ejecuta una peticion
+3. third
+
+### Flujo de Datos de una Petición
+
+**Ejemplo de recorrido:** El usuario busca un país por su nombre (ejemplo: *"Bolivia"*).
+
+1. El usuario escribe *"Bolivia"* en el campo de búsqueda de la interfaz web y presiona el botón "Buscar" (o genera un evento `input`/`submit`).
+
+2. `fetch` (Cliente HTTP), el código JavaScript en el navegador captura el evento y ejecuta una petición asíncrona:
+
+    ```javascript
+    fetch('/api/v1/paises?q=Bolivia')
+    ```
+
+3. El servidor recibe la petición HTTP `GET`, analiza el parámetro de consulta `q=Bolivia`, valida los datos y consulta la base de datos o el servicio origen.
+
+4. El servidor retorna la información estructurada con un código de estado `200 OK` en formato JSON:
+
+    ```json
+    {
+      "total": 1,
+      "paises": [
+        {
+            "code": "BOL",
+            "name": "Bolivia",
+            "official_name": "Estado Plurinacional de Bolivia",
+            "population": 11673021,
+            "region": "América",
+            "subregion": "América del Sur",
+            "capital": "Sucre",
+            "currency_code": "BOB",
+            "currency_name": "Boliviano",
+            "languages": ["Español", "Quechua", "Aymara"],
+            "borders": ["ARG", "BRA", "CHL", "PRY", "PER"],
+            "landlocked": true,
+            "area": 1098581,
+            "coordinates": { "latitude": -16.29, "longitude": -63.59 },
+            "timezones": ["America/La_Paz"],
+            "calling_code": "+591",
+            "demonym": "Boliviano",
+            "flag_url": "https://flagcdn.com/w320/bo.png",
+            "flag_emoji": "🇧🇴"
+        }
+      ]
+    }
+    ```
+
+5. El navegador procesa la promesa recibida en el `fetch()`, transforma el JSON a objetos JavaScript y manipula el DOM (`document.querySelector` / `innerHTML`) para pintar la tarjeta del país en la interfaz.
+
+
+
+---
+
 ## 1. Recurso central: `paises`
 
 La entidad central del proyecto es el **país**. Es un recurso con identidad única,
