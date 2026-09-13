@@ -35,15 +35,7 @@ graph LR
     Fetch -->|Renderiza elementos| UI
 ```
 
-### 1.2 Flujo de Datos de una petición
-
-**Ejemplo de Recorrido:** El usuario busca un país por su nombre (ejemplo: "Bolivia")
-
-1. El usuario escribe "Bolivia" en el campo de búsqueda de la interfazz y presiona el botón "Buscar"
-2. `fetch` (Cliente HTTP): El código JavaScript en el navegador captura el evento y ejecuta una peticion
-3. third
-
-### Flujo de Datos de una Petición
+### 1.2 Flujo de Datos de una Petición
 
 **Ejemplo de recorrido:** El usuario busca un país por su nombre (ejemplo: *"Bolivia"*).
 
