@@ -323,3 +323,110 @@ Express**, por las siguientes razones:
 4. **Ecosistema npm.** Validación de datos, conexión a bases de datos, tests:
    casi todo tiene un paquete maduro a un `npm install` de distancia.
 
+
+---
+
+
+## 1. Analiza una interfaz
+
+### COUNTRIES EXPLORER
+
+La interfaz de mi proyecto usa un diseño oscuro y bastante simple. La mayor parte de la pantalla se centra en las tarjetas de los países, donde se muestra la bandera, el nombre, la población, la región y la capital. Arriba están las opciones para buscar, filtrar por región y ordenar los resultados.
+
+En cuanto a la **jerarquía visual**, se nota que el nombre del proyecto y los nombres de los países son lo que más destaca, siendo estos los elementos principales. Dentro de cada tarjeta, primero llama la atención el nombre del país y después aparecen datos como la población, la región y la capital como información secundaria.
+
+Cuando se selecciona un país, se muestra un panel con más información. Esto ayuda a que el usuario pueda entender rápido qué es lo más importante y qué datos son secundarios.
+
+Sobre el **contraste**, la página usa fondos oscuros con textos claros, por lo que en general la información se puede leer bien. También se usa un color celeste para resaltar algunos elementos importantes o interactivos. Esto sirve para que ciertas partes llamen más la atención sin llenar toda la página de colores.
+
+En la **alineación y proximidad**, los elementos están bastante ordenados. La información de cada país se mantiene junta dentro de su tarjeta, y los controles como la búsqueda y los filtros están agrupados en una misma zona. Esto hace que la interfaz no se vea desordenada y sea más fácil entender qué cosas están relacionadas entre sí.
+
+También hay bastante **repetición y consistencia**, ya que todas las tarjetas tienen prácticamente la misma estructura, colores, bordes y forma de mostrar la información. Eso ayuda porque el usuario no tiene que aprender cómo funciona cada tarjeta por separado, ya que todas siguen el mismo estilo.
+
+Sobre el **espacio**, la interfaz deja una separación razonable entre tarjetas y controles, así que no se siente demasiado cargada. La distribución en forma de cuadrícula también ayuda bastante a mantener todo ordenado.
+
+### UX: qué funciona
+
+- La lista de países se reconoce rápidamente.
+- El filtro por región reduce los resultados sin cambiar de página.
+- La búsqueda permite localizar un país.
+- Las tarjetas mantienen un patrón consistente.
+- La interfaz es responsive.
+- Al seleccionar una tarjeta se presenta información adicional sin abandonar la vista principal.
+
+### UX: qué mejoraría
+
+- La búsqueda puede simplificarse y hacerse más tolerante a coincidencias parciales.
+- Cuando se conecte la API será necesario mostrar estados de cargando, error y sin resultados.
+- Las tarjetas deberían mejorar su navegación mediante teclado.
+- Sería conveniente indicar visualmente cuándo una tarjeta tiene `hover`, foco o está seleccionada.
+
+---
+
+## 2. Define tu paleta
+
+Para el rediseño visual se propone una interfaz clara, a diferencia del diseño oscuro que tiene actualmente el proyecto.
+
+La idea es usar fondos blancos y grises claros para que la información sea fácil de leer y para que las banderas de los países puedan destacar más.
+
+| Rol | Color | Uso |
+|---|---|---|
+| Primario | `#2563EB` | Botones, enlaces y elementos principales |
+| Secundario | `#0F766E` | Elementos de apoyo o filtros |
+| Fondo principal | `#F8FAFC` | Fondo general |
+| Superficie | `#FFFFFF` | Tarjetas y paneles |
+| Texto principal | `#0F172A` | Títulos y contenido importante |
+| Texto secundario | `#64748B` | Información secundaria |
+| Bordes | `#E2E8F0` | Límites de tarjetas y controles |
+
+La idea es no utilizar demasiados colores, sino que cada uno tenga una función definida dentro de la interfaz.
+
+---
+
+## 3. Elige la tipografía
+
+Se utilizará una sola familia tipográfica como principal: **Inter**, ya que tiene buena legibilidad en pantallas y funciona bien tanto en textos grandes como pequeños.
+
+### Escala tipográfica
+
+| Elemento | Tamaño | Peso | Interlineado | Uso |
+|---|---:|---|---:|---|
+| H1 | 32 px | Bold | 40 px | Título principal de la aplicación |
+| H2 | 24 px | SemiBold | 32 px | Títulos de secciones o paneles |
+| H3 | 20 px | SemiBold | 28 px | Nombres de países o subtítulos |
+| Texto normal | 16 px | Regular | 24 px | Información principal y contenido |
+| Texto secundario | 14 px | Regular | 20 px | Datos complementarios |
+| Texto pequeño | 12 px | Regular | 18 px | Etiquetas o información menos importante |
+
+---
+
+## 4. Bosqueja la jerarquía
+
+La idea principal es que no todos los elementos tengan el mismo nivel de importancia visual, sino que algunos destaquen más que otros por su tamaño, posición, peso tipográfico y color.
+
+Esto permite guiar el orden en el que el usuario recorre la interfaz y ayuda a identificar rápidamente qué información es más importante.
+
+### Orden de importancia en la vista principal
+
+| Nivel | Elemento | Descripción |
+|---:|---|---|
+| 1 | Título de la aplicación | Es lo primero que debería notar el usuario y permite identificar rápidamente que se encuentra en Countries Explorer. |
+| 2 | Búsqueda y filtros | Permiten al usuario interactuar con la información y encontrar países de forma más rápida. |
+| 3 | Tarjetas de países | Muestran la información principal de cada país y forman el contenido central de la aplicación. |
+
+### Jerarquía dentro de cada tarjeta
+
+| Nivel | Elemento |
+|---:|---|
+| 1 | Bandera y nombre del país |
+| 2 | Región y capital |
+| 3 | Población y otros datos secundarios |
+
+### Jerarquía en el panel de detalle
+
+| Nivel | Elemento |
+|---:|---|
+| 1 | Nombre del país |
+| 2 | Bandera o imagen principal |
+| 3 | Información general |
+| 4 | Moneda, idiomas y países fronterizos |
