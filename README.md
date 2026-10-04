@@ -430,3 +430,10 @@ Esto permite guiar el orden en el que el usuario recorre la interfaz y ayuda a i
 | 2 | Bandera o imagen principal |
 | 3 | Información general |
 | 4 | Moneda, idiomas y países fronterizos |
+
+
+## PROTOTIPO EN FIGMA
+
+Puedes ver el prototipo interactivo del proyecto en el siguiente enlace:
+
+[Ver prototipo en Figma](https://www.figma.com/proto/45zWUI2QEZBUfvQXEofeAm/Practica-U2-2?node-id=9-520&p=f&t=BIXgU7UNENVxEQB2-1&scaling=scale-down&content-scaling=fixed&page-id=2%3A36&starting-point-node-id=9%3A520)
